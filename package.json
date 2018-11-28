@@ -1,0 +1,29 @@
+{
+  "name": "with-styled-components",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "format": "prettier --trailing-comma=all --single-quote --write \"{,!(.next)/**/}*.{js,json,jsx,md}\""
+  },
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "classnames": "^2.2.6",
+    "colors.css": "^3.0.0",
+    "date-fns": "^2.0.0-alpha.25",
+    "next": "^7.0.2",
+    "prettier": "^1.15.2",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-toast-notifications": "^1.3.1",
+    "styled-components": "^4.0.0",
+    "todomvc-app-css": "^2.1.2",
+    "todomvc-common": "^1.0.5"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.8.0"
+  },
+  "license": "ISC"
+}
