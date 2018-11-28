@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "name": "Strategy List",
+  "alias": ["strategyli.st"],
+  "github": {
+    "enabled": true
+  },
+  "builds": [
+    { "src": "next.config.js", "use": "@now/next" }
+  ]
+}
