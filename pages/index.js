@@ -114,7 +114,10 @@ export default class TodoApp extends Component {
 
     // + 100 buffer to make sure we're actually in the new day
     this._dailyTimer = setTimeout(this.onNextDay, nextDayStartsAt - now + 100);
-    this._weeklyTimer = setTimeout(this.onNextWeek, nextWeekStartsAt - now + 100);
+    this._weeklyTimer = setTimeout(
+      this.onNextWeek,
+      nextWeekStartsAt - now + 100,
+    );
   };
 
   onNextDay = () => {
@@ -124,7 +127,7 @@ export default class TodoApp extends Component {
       this.setupResetTimers();
       return { gameState: newGameState };
     });
-  }
+  };
 
   onNextWeek = () => {
     this.setState(({ gameState, model }) => {
@@ -133,7 +136,7 @@ export default class TodoApp extends Component {
       this.setupResetTimers();
       return { gameState: newGameState };
     });
-  }
+  };
 
   completeDay = (gameState, model) => {
     let newGameState = { ...gameState };
@@ -145,10 +148,11 @@ export default class TodoApp extends Component {
 
       this._addToast(
         <Fragment>
-          <strong>{damage} HP</strong> damage received<br />
+          <strong>{damage} HP</strong> damage received
+          <br />
           from <strong>uncompleted dailies</strong>.
         </Fragment>,
-        { appearance: 'error', autoDismiss: true }
+        { appearance: 'error', autoDismiss: true },
       );
     } else {
       console.log('no damage received');
@@ -165,10 +169,11 @@ export default class TodoApp extends Component {
 
       this._addToast(
         <Fragment>
-          <strong>{damage} HP</strong> damage received<br />
+          <strong>{damage} HP</strong> damage received
+          <br />
           from <strong>uncompleted weeklies</strong>.
         </Fragment>,
-        { appearance: 'error', autoDismiss: true }
+        { appearance: 'error', autoDismiss: true },
       );
     }
     return this.resetWeeklies(newGameState, model);
@@ -228,7 +233,7 @@ export default class TodoApp extends Component {
       this.state.model.addTodo(val, this.state.todoRepeats);
       this.setState({ newTodo: '' });
     }
-  }
+  };
 
   complete = todoToToggle => {
     this.state.model.complete(todoToToggle);
@@ -255,7 +260,7 @@ export default class TodoApp extends Component {
           <Fragment>
             You've reached <strong>level {newGameState.level}</strong>! 🎉
           </Fragment>,
-          { appearance: 'success', autoDismiss: true }
+          { appearance: 'success', autoDismiss: true },
         );
       }
 
@@ -418,7 +423,10 @@ export default class TodoApp extends Component {
                   </span>
                 ) : null}
                 {main}
-                <Footer onNextDay={this.onNextDay} onNextWeek={this.onNextWeek} />
+                <Footer
+                  onNextDay={this.onNextDay}
+                  onNextWeek={this.onNextWeek}
+                />
               </div>
             );
           }}
